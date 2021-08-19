@@ -1,0 +1,13 @@
+.table-hover > tbody > tr:hover {
+  background-color: lighten(cyan, 40%);
+}
+
+thead {
+  background: teal;
+  color: aliceblue;
+}
+
+thead[_ngcontent-ksd-c2] {
+  background: teal;
+  color: aliceblue;
+}

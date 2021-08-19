@@ -1,0 +1,55 @@
+<div class="m-3">
+  <p>Company's Users List</p>
+  <form>
+    <div class="form-group form-inline">
+      <!-- Search country by name: -->
+      <!-- <input
+        class="form-control ml-2"
+        type="text"
+        name="searchTerm"
+        [(ngModel)]="searchTerm"
+        (input)="search($event.target.value)"
+      /> -->
+    </div>
+  </form>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col" sortable="name">AVATAR</th>
+        <th scope="col" sortable="area">FIRST NAME</th>
+        <th scope="col" sortable="population">LAST NAME</th>
+        <th scope="col" sortable="population">EMAIL ID</th>
+        <th scope="col" sortable="population">ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList">
+        <td>{{ user.id }}</td>
+
+        <td>
+          <img [src]="user.avatar" class="mr-2" />
+        </td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button
+            (click)="viewUser(user.id)"
+            type="button"
+            class="btn btn-primary"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </button>
+          <button
+            (click)="deleteUser(user.id)"
+            type="button"
+            class="btn btn-danger"
+          >
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
